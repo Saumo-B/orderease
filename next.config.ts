@@ -1,30 +1,6 @@
-// import type {NextConfig} from 'next';
-
-// const nextConfig: NextConfig = {
-//   /* config options here */
-//   typescript: {
-//     ignoreBuildErrors: true,
-//   },
-//   eslint: {
-//     ignoreDuringBuilds: true,
-//   },
-//   images: {
-//     remotePatterns: [
-//       {
-//         protocol: 'https',
-//         hostname: 'placehold.co',
-//         port: '',
-//         pathname: '/**',
-//       },
-//     ],
-//   },
-// };
-
-// export default nextConfig;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    typescript: {
+  typescript: {
     ignoreBuildErrors: true,
   },
   eslint: {
@@ -34,8 +10,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // needed for static export
   },
-  basePath: "/orderease", // repo name
-  assetPrefix: "/orderease/", // repo name
+  basePath: "/orderease",      // 
+  assetPrefix: "/orderease/",  // 
 };
 
 module.exports = nextConfig;
