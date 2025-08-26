@@ -34,8 +34,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // needed for static export
   },
-  basePath: "/<your-repo-name>", // repo name
-  assetPrefix: "/<your-repo-name>/", // repo name
+  basePath: "/orderease", // repo name
+  assetPrefix: "/orderease/", // repo name
 };
 
 module.exports = nextConfig;
