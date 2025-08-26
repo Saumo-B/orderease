@@ -1,36 +1,32 @@
 
-'use client';
-
-import { useOrder } from '@/context/OrderContext';
-import { useParams, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import type { Order } from '@/lib/types';
+import { getOrderById } from '@/lib/order-data'; // Assuming a server-side data fetching function
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle } from 'lucide-react';
 
-export default function OrderSuccessPage() {
-  const { token } = useParams();
-  const { myOrders } = useOrder();
-  const [currentOrder, setCurrentOrder] = useState<Order | null>(null);
+export async function generateStaticParams() {
+  // In a real application, you would fetch your order tokens from your data source
+  const orderTokens = ['dummy-token-123']; // For now, include your dummy token
 
-  useEffect(() => {
-    const foundOrder = myOrders.find((o) => o.token === token);
-    if (foundOrder) {
-      setCurrentOrder(foundOrder);
-    }
-  }, [myOrders, token]);
+  return orderTokens.map((token) => ({
+    token: token,
+  }));
+}
+
+export default function OrderSuccessPage({ params }: { params: { token: string } }) {
+  const { token } = params;
+  // Fetch order data on the server
+  const currentOrder = getOrderById(token as string); // Assuming getOrderById fetches data based on token
 
   if (!currentOrder) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold">Loading your order...</h1>
-          <p className="text-muted-foreground">If it doesn't load, please check with the staff.</p>
-        </div>
-      </div>
+      <Alert>
+        <AlertTitle>Order Not Found</AlertTitle>
+        <AlertDescription>The order with token {token} could not be found. Please check with the staff.</AlertDescription>
+      </Alert>
     );
   }
 
