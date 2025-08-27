@@ -4,7 +4,7 @@ export interface MenuItem {
   description: string;
   price: number;
   image: string;
-  category: 'Burgers' | 'Pizzas' | 'Sides' | 'Drinks';
+  isOutOfStock: boolean;
 }
 
 export interface CartItem extends MenuItem {

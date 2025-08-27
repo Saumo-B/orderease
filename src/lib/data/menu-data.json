@@ -1,0 +1,72 @@
+[
+  {
+    "id": "pizza-margherita",
+    "name": "Pizza Margherita",
+    "description": "Classic pizza with tomato, mozzarella, and basil.",
+    "price": 12.99,
+    "image": "/images/pizza-margherita.jpg"
+  },
+  {
+    "id": "burger-classic",
+    "name": "Classic Burger",
+    "description": "Beef patty with lettuce, tomato, onion, and pickles on a bun.",
+    "price": 9.99,
+    "image": "/images/burger-classic.jpg"
+  },
+  {
+    "id": "pasta-carbonara",
+    "name": "Pasta Carbonara",
+    "description": "Pasta with eggs, hard cheese, cured pork, and black pepper.",
+    "price": 14.50,
+    "image": "/images/pasta-carbonara.jpg"
+  },
+  {
+    "id": "salad-caesar",
+    "name": "Caesar Salad",
+    "description": "Romaine lettuce, croutons, parmesan cheese, and Caesar dressing.",
+    "price": 8.75,
+    "image": "/images/salad-caesar.jpg"
+  },
+  {
+    "id": "sushi-california-roll",
+    "name": "California Roll",
+    "description": "Sushi roll with crab meat, avocado, and cucumber.",
+    "price": 7.50,
+    "image": "/images/sushi-california-roll.jpg"
+  },
+  {
+    "id": "tacos-beef",
+    "name": "Beef Tacos",
+    "description": "Three tacos with seasoned ground beef, lettuce, and cheese.",
+    "price": 10.25,
+    "image": "/images/tacos-beef.jpg"
+  },
+  {
+    "id": "soup-tomato",
+    "name": "Tomato Soup",
+    "description": "Creamy tomato soup.",
+    "price": 5.00,
+    "image": "/images/soup-tomato.jpg"
+  },
+  {
+    "id": "steak-ribeye",
+    "name": "Ribeye Steak",
+    "description": "Grilled ribeye steak with a side of mashed potatoes.",
+    "price": 25.99,
+    "image": "/images/steak-ribeye.jpg"
+  },
+  {
+    "id": "fish-salmon",
+    "name": "Grilled Salmon",
+    "description": "Grilled salmon fillet with roasted vegetables.",
+    "price": 18.75,
+    "image": "/images/fish-salmon.jpg"
+  },
+  {
+    "id": "dessert-chocolate-cake",
+    "name": "Chocolate Cake",
+    "description": "Rich chocolate cake with frosting.",
+    "price": 6.50,
+    "image": "/images/dessert-chocolate-cake.jpg"
+  }
+]

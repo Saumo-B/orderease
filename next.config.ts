@@ -3,6 +3,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  allowedDevOrigins: process.env.ALLOWED_DEV_ORIGINS?.split(',').map((origin) => origin.trim()) || [],
   eslint: {
     ignoreDuringBuilds: true,
   },

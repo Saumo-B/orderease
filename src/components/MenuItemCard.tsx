@@ -29,26 +29,31 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
   };
 
   return (
-    <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-      <CardHeader className="p-0">
-        <div className="aspect-video relative">
-          <Image
+    <Card className={`flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${item.isOutOfStock ? 'opacity-50' : ''}`}>
+      <CardHeader>
+        <div className="aspect-video relative"> {/* This div should wrap both */}
+        <Image
             src={item.image}
             alt={item.name}
             fill
             className="object-cover"
-            data-ai-hint={item.name.toLowerCase().split(' ').slice(0,2).join(' ')}
+ data-ai-hint={item.name.toLowerCase().split(' ').slice(0, 2).join(' ')}
           />
         </div>
         <div className="p-6 pb-2">
-          <CardTitle className="font-headline text-xl">{item.name}</CardTitle>
-          <CardDescription className="mt-2 h-10">{item.description}</CardDescription>
-        </div>
+ <CardTitle className="font-headline text-xl">{item.name}</CardTitle>
+ <CardDescription className="mt-2 h-10">{item.description}</CardDescription>
+ </div>
       </CardHeader>
+
       <CardContent className="flex-grow"></CardContent>
       <CardFooter className="flex flex-col sm:flex-row justify-between items-center p-6 pt-0">
         <p className="text-xl font-bold text-primary mb-4 sm:mb-0">INR {item.price}</p>
-        {quantity === 0 ? (
+        {item.isOutOfStock ? (
+          <Button disabled className="w-full sm:w-auto">
+            Sold Out
+          </Button>
+        ) : quantity === 0 ? (
           <Button onClick={handleAddToCart} className="w-full sm:w-auto">
             <PlusCircle className="mr-2 h-4 w-4" />
             Add to Cart
